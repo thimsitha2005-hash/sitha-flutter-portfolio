@@ -9,6 +9,8 @@ class HomePage extends StatelessWidget {
   static final GlobalKey homeKey = GlobalKey();
   static final GlobalKey projectKey = GlobalKey();
   static final GlobalKey contactKey = GlobalKey();
+  static final GlobalKey aboutKey = GlobalKey();
+  static final GlobalKey skillsKey = GlobalKey();
 
   static const Color navy = Color(0xFF17243A);
 
@@ -53,15 +55,27 @@ class HomePage extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => scrollToSection(homeKey),
-            child: const Text('Home', style: TextStyle(color: Colors.white)),
+            child: const Text('Home'),
           ),
+
+          TextButton(
+            onPressed: () => scrollToSection(aboutKey),
+            child: const Text('About'),
+          ),
+
+          TextButton(
+            onPressed: () => scrollToSection(skillsKey),
+            child: const Text('Skills'),
+          ),
+
           TextButton(
             onPressed: () => scrollToSection(projectKey),
-            child: const Text('Project', style: TextStyle(color: Colors.white)),
+            child: const Text('Projects'),
           ),
+
           TextButton(
             onPressed: () => scrollToSection(contactKey),
-            child: const Text('Contact', style: TextStyle(color: Colors.white)),
+            child: const Text('Contact'),
           ),
           const SizedBox(width: 16),
         ],
@@ -192,13 +206,17 @@ class HomePage extends StatelessWidget {
                   ),
 
                   // ========== ABOUT ==========
-                  const Text(
+                  Text(
                     'About Me',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    key: aboutKey,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'I am a Management Information Technology student interested in Flutter development '
+                    'I am a Management Information System(MIS) student interested in Flutter development '
                         'and mobile application development. I enjoy building user-friendly applications '
                         'and integrating REST APIs.',
                     style: TextStyle(
@@ -211,9 +229,13 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 60),
 
                   // ========== SKILLS ==========
-                  const Text(
+                  Text(
                     'Technical Skills',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    key: skillsKey,
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 20),
                   Wrap(
@@ -248,10 +270,12 @@ class HomePage extends StatelessWidget {
                     color: Colors.brown,
                     title: 'Coffee Shop App',
                     description:
-                    'A coffee ordering app with a clean UI, product list, and cart screen. '
-                        'Focused on layout, custom widgets, and responsive design using static data.',
+                    'A coffee ordering app with a clean UI, product list, '
+                        'and cart screen. Focused on UI design and responsive layouts.',
                     tech: ['Flutter', 'Dart', 'UI Design'],
-                    githubUrl: 'https://github.com/thimsitha2005-hash/coffee-shop-app',
+                    githubUrl:
+                    'https://github.com/thimsitha2005-hash/coffee-shop-app',
+                    youtubeUrl: 'https://youtu.be/z0cWtQK9nRQ',
                   ),
 
                   // E-Commerce App
@@ -260,13 +284,15 @@ class HomePage extends StatelessWidget {
                     color: Colors.blue,
                     title: 'E-Commerce Shop App',
                     description:
-                    'A shopping app that fetches products from a REST API and parses JSON data. '
-                        'Includes multiple screens with navigation (routing), product list, and product details.',
+                    'An online shopping application that integrates REST APIs '
+                        'and JSON data with product navigation and details.',
                     tech: ['Flutter', 'Dart', 'REST API', 'JSON', 'Navigation'],
-                    githubUrl: 'https://github.com/thimsitha2005-hash/e-commerce-shop-app',
+                    githubUrl:
+                    'https://github.com/thimsitha2005-hash/e-commerce-shop-app',
+                    youtubeUrl: 'https://youtu.be/K8S6xJVQtMc',
                   ),
 
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 80),
 
                   // ========== CONTACT ==========
                   Container(
